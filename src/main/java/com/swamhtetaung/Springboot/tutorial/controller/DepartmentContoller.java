@@ -2,6 +2,7 @@ package com.swamhtetaung.Springboot.tutorial.controller;
 
 import com.swamhtetaung.Springboot.tutorial.entity.Department;
 import com.swamhtetaung.Springboot.tutorial.service.DepartmentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,12 +10,11 @@ import java.util.List;
 
 @RestController
 public class DepartmentContoller {
-
     @Autowired
     private DepartmentService departmentService;
 
     @PostMapping("/department")
-    public Department storeDepartment(@RequestBody Department department){
+    public Department storeDepartment(@Valid @RequestBody Department department){
         return departmentService.storeDepartment(department);
     }
 
