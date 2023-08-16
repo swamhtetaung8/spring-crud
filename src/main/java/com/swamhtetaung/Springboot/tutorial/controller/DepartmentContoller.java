@@ -1,6 +1,7 @@
 package com.swamhtetaung.Springboot.tutorial.controller;
 
 import com.swamhtetaung.Springboot.tutorial.entity.Department;
+import com.swamhtetaung.Springboot.tutorial.errors.DepartmentNotFoundException;
 import com.swamhtetaung.Springboot.tutorial.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class DepartmentContoller {
     }
 
     @GetMapping("/department/{id}")
-    public Department getDepartmentById(@PathVariable("id") Long departmentId){
+    public Department getDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.getDepartmentById(departmentId);
     }
 
