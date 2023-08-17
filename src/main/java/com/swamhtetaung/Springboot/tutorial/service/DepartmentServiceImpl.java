@@ -47,7 +47,7 @@ public class DepartmentServiceImpl implements DepartmentService{
         }
 
         if(Objects.nonNull(department.getDepartmentCode()) && "" != department.getDepartmentCode()){
-            updateDept.setDepartmentCode(department.getDepartmentAddress());
+            updateDept.setDepartmentCode(department.getDepartmentCode());
         }
 
         if(Objects.nonNull(department.getDepartmentName()) && "" != department.getDepartmentName()){
